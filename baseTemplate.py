@@ -27,8 +27,6 @@ def returnMain():
 ################################################
 
 # auto Menu starts
-# made this function to automate the menus I use in my assignments, it can also do a bit more.
-
 benchMode = False
 currentBench = 0
 
