@@ -1,11 +1,10 @@
 # Zachary Hoove || Create Formated File v1.0
 # 10-17-22
 
-from fileinput import filename
 import shutil
 from datetime import datetime
 
-template = r'C:\Users\zhoover2891\Downloads\python\baseTemplate.py'
+template = r'autoMenu.py'
 
 print("\n    File Creator")
 print(" --------+---------   \n")
@@ -25,11 +24,28 @@ with open(path, 'r') as file :
 date = datetime.today().strftime('%m-%d-%y')
 # Replace the target string
 filedata = filedata.replace('{date}', date)
-filedata2 = filedata.replace('{assignmentName}', AssignmentName)
-filedata3 = filedata.replace('# import {moduleName} as foo', f"import {fileName} as foo")
+filedata = filedata.replace('{assignmentName}', AssignmentName)
+filedata = filedata.replace('# import {moduleName} as foo', f"import {fileName} as foo")
+filedata = filedata.replace('# {list = getmembers(foo, isfunction)}', "list = getmembers(foo, isfunction)")
+
+header = r"\n    " + AssignmentName + r"   "
+filedata = filedata.replace('{assignmentTitle}', header)
+bottom = r" "
+
+i = 0
+while i < (len(header)/2):
+	bottom += r"-"
+	i += 1
+bottom += r"+"
+i = 0
+while i < (len(header)/2):
+	bottom += r"-"
+	i += 1
+
+bottom += r"\n"
+
+filedata = filedata.replace('{dashThing}', bottom)
 
 # Write the file out again
-with open('file.txt', 'w') as file:
+with open(path, 'w') as file:
   file.write(filedata)
-  file.write(filedata2)
-  file.write(filedata3)
