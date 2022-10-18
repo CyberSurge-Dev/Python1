@@ -1,5 +1,5 @@
-# Zachary hoover || auto menu v1
-# 10-6-22
+# Zachary hoover || {assignmentName}
+# {date}
 import os
 from inspect import getmembers, isfunction
 
@@ -11,8 +11,8 @@ clear = lambda: os.system('cls')
 
 def printHeader():
     clear()
-    print("\n     Independent Practice 5   ")
-    print(" --------------+--------------\n")
+    print("{assignmentTitle}")
+    print("{dashThing}")
     return
 
 def returnMain():
@@ -23,7 +23,17 @@ def returnMain():
 ################################################
 # start functions here
 
+def func1():
+	print("1")
+	returnMain()
 
+def func2():
+	print("2")
+	returnMain()
+
+def func3():
+	print("3")
+	returnMain()
 
 ################################################
 
@@ -43,9 +53,9 @@ def autoMenu():
 		printHeader()
 
 		# change were it says 'baseTemplate' to module name.
-		import baseTemplate as foo
-		
-		list = getmembers(foo, isfunction)
+		# import {moduleName} as foo
+		list = []
+		# {list = getmembers(foo, isfunction)}
 	
 		i = 0
 		x = 0
@@ -99,5 +109,5 @@ def autoMenu():
 			usable[currentBench-1][1]()
 			
 # auto menu ends
-#program start
+# program start
 autoMenu()
