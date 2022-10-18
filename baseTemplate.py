@@ -23,17 +23,6 @@ def returnMain():
 ################################################
 # start functions here
 
-def func1():
-	print("1")
-	returnMain()
-
-def func2():
-	print("2")
-	returnMain()
-
-def func3():
-	print("3")
-	returnMain()
 
 ################################################
 
