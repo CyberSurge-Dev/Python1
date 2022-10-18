@@ -1,5 +1,5 @@
 # Python1
-Python 1 honors repo
+Python 1 Academy Honors repo
 
 ## Required files
 ### - Download baseTemplate.py and createFile.py.
