@@ -7,35 +7,38 @@ This repo contains ll of the python files from my python 1 class
  - Run createFile, and enter the correct information.
 # Files listed by unit
 ### Unit 3
- - HelloWorld.py
- - Math.py
- - GuidedPractice2.py
- - independentPractice2.py
- - stand_time.py
- - BooleansGuided.py
  - alarmclock.py
+ - BooleansGuided.py
+ - GuidedPractice2.py
+ - HelloWorld.py
+ - independentPractice2.py
+ - Math.py
+ - stand_time.py
  - testTime.py
 
 ### Unit 4
  - guidedPractice5.py
- - independentPractice5.py
  - guidedPractice6.py
+ - IndependentPractice4.py
+ - independentPractice5.py
  - independentPractice6.py
  - pizzaTime.py
- - IndependentPractice4.py
 
 ### Unit 5
  - guidedPractice7.py
- - independentPractice7.py
  - guidedPractice8.py
  - guidedPractice9.py
- - independentPractice9.py
+ - independentPractice7.py
  - independentPractice8.py
+ - independentPractice9.py
 
 ### Unit 6
  - guidedPractice10.py
  - guidedPractice11.py
  - independentPractice10.py
+ - IndependentPractice11.py
+ - pizzaTime2.py
+ - __pycache__
 
 ### Other
  - hello script.py
