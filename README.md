@@ -40,9 +40,11 @@ This repo contains ll of the python files from my python 1 class
  - pizzaTime2.py
  - __pycache__
 
+### Projects
+ - pythonProject1.py
+
 ### Other
  - hello script.py
  - hello2.py
  - py3.py
  - variables.py
-
