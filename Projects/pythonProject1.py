@@ -1,11 +1,26 @@
 # Zachary Hoover || Python Project 1
 # 10-24-22
 
+
+################+ IMPORTANT +################
+#                                           #
+# This program runs better in a terminal    #
+#                                           #
+# The screen clearing and Loading bar will  #
+# only run inside of a terminal. without    #
+# this, you may see some weird text         #
+# related issues in the IDLE terminal.      #
+#                                           #
+################+ IMPORTANT +################
+
+
 import os
 # repeating code
 ###############
 
 clear = lambda: os.system('cls')
+import time
+import random
 
 # Header: Clear screen, print title, return to call
 def printHeader():
@@ -264,6 +279,7 @@ def ancientArtifacts():
 
 ##############
 
+
 """
 Main function, gives user a list of objects and asks
 them to enter the number of the item they want to go to.
@@ -272,7 +288,6 @@ calls function user wants to go to.
 def main():
     # Prints the programs top header
     printHeader()
-
     # prints out all of the users options
     print("""   1. Scenic River Cruise
    2. Carnival Carousel
@@ -332,5 +347,19 @@ def main():
     # if the input is invalid this resets the menu
     else:
         main()
-    
+
+
+# loading bar at the begining of the program
+loadingBar = 0
+print("              Loading...             ")
+#      [###################################]
+while loadingBar < 36:
+    # Draws the bar ("end = "\r" is an optinal parameter for the print method. It is used to
+    # add something to the end of a line after it has been run. Here it is used to move the cursor
+    # back to the begining of the line.)
+    print(" [" + "#" * loadingBar + " " * (34 - loadingBar) + "]", end = '\r')
+    # pause time between each segment
+    time.sleep(random.uniform(0.001, 0.2))
+    loadingBar += 1
+isLoading = False
 main()
