@@ -111,6 +111,7 @@ def autoMenu():
         print("Debug")
         autoMenu()
       else:
+        funcName = usable[usrin - 1][0]
         usable[usrin - 1][1]()
 
     except:
