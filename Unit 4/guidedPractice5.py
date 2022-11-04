@@ -3,7 +3,7 @@
 
 import os
 from unicodedata import name
-clear = lambda: os.system('cls')
+clear = lambda: os.system("clear" if os.name == "posix" else "cls")
 
 # prints top header
 def printHeader():

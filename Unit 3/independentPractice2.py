@@ -3,7 +3,7 @@
 
 import os
 import random
-clear = lambda: os.system('cls')
+clear = lambda: os.system("clear" if os.name == "posix" else "cls")
 
 # def setVars():
 

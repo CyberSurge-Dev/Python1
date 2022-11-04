@@ -7,7 +7,7 @@ import time
 import random
 global clear
 
-clear = lambda: os.system('cls')
+clear = lambda: os.system("clear" if os.name == "posix" else "cls")
 
 # loads the top header (made to simplify repeating code)
 def loadHeader():

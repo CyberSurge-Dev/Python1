@@ -13,35 +13,34 @@ AssignmentName = input(" Enter the assignment title: ")
 path = input(" Enter file path(leave blank for current dir): ")
 
 if path == "":
-  path = (fileName + ".py")
+    path = (fileName + ".py")
 
 shutil.copyfile(template, path)
 
-with open(path, 'r') as file:
+
+with open(path, 'r') as file :
   filedata = file.read()
 
 date = datetime.today().strftime('%m-%d-%y')
 # Replace the target string
 filedata = filedata.replace('{date}', date)
 filedata = filedata.replace('{assignmentName}', AssignmentName)
-filedata = filedata.replace('# import {moduleName} as foo',
-                            f"import {fileName} as foo")
-filedata = filedata.replace('# {list = getmembers(foo, isfunction)}',
-                            "list = getmembers(foo, isfunction)")
+filedata = filedata.replace('# import {moduleName} as foo', f"import {fileName} as foo")
+filedata = filedata.replace('# {list = getmembers(foo, isfunction)}', "list = getmembers(foo, isfunction)")
 
 header = r"\n    " + AssignmentName + r"   "
 filedata = filedata.replace('{assignmentTitle}', header)
 bottom = r" "
 
 i = 0
-while i < (len(header) / 2):
-  bottom += r"-"
-  i += 1
+while i < (len(header)/2):
+	bottom += r"-"
+	i += 1
 bottom += r"+"
 i = 0
-while i < (len(header) / 2):
-  bottom += r"-"
-  i += 1
+while i < (len(header)/2):
+	bottom += r"-"
+	i += 1
 
 bottom += r"\n"
 

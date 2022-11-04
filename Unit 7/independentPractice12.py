@@ -7,7 +7,7 @@ from inspect import getmembers, isfunction
 ###############
 
 global clear
-clear = lambda: os.system("cls")
+clear = lambda: os.system("clear" if os.name == "posix" else "cls")
 funcName = ""
 
 def printHeader():

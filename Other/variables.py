@@ -3,7 +3,7 @@
 
 import os
 global clear
-clear = lambda: os.system('cls')
+clear = lambda: os.system("clear" if os.name == "posix" else "cls")
 
 # prints a simple message from a variable
 def simpleMessage():

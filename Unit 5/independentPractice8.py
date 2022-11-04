@@ -9,7 +9,7 @@ import random
 ###############
 
 global clear
-clear = lambda: os.system('cls')
+clear = lambda: os.system("clear" if os.name == "posix" else "cls")
 
 def printHeader():
     clear()

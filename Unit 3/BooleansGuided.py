@@ -4,7 +4,7 @@
 
 import os
 global clear
-clear = lambda: os.system('cls')
+clear = lambda: os.system("clear" if os.name == "posix" else "cls")
 
 def returnMain():
     print("\n press any key to continue")

@@ -5,7 +5,7 @@
 import time
 import os
 global clear
-clear = lambda: os.system('clear' if os.name == 'posix' else 'cls')
+clear = lambda: os.system("clear" if os.name == "posix" else "cls")
 
 
 current_time = time.localtime( )
