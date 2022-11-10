@@ -1,5 +1,5 @@
-# Zachary hoover || {assignmentName}
-# {date}
+# Zachary hoover || Independent Practice #13
+# 11-09-22
 import os
 from inspect import getmembers, isfunction
 
@@ -13,8 +13,8 @@ funcName = ""
 
 def printHeader():
   clear()
-  print("{assignmentTitle}")
-  print("{dashThing}")
+  print("\n    Independent Practice #13   ")
+  print(" -----------------+-----------------")
   print(f" Function: {funcName} \n")
   return
 
@@ -28,6 +28,76 @@ def returnMain():
 ################################################
 # start functions here
 
+# Prints different parts of the street name "River Oaks"
+def program_1():
+  printHeader()
+
+  street_name = "River Oaks"
+  print(street_name[:5:2])
+  print(street_name[-3:])
+
+  returnMain()
+
+# Takes user input, and checks to make sure that the second character is i,o, or u.
+# if not, then the loop repeats until the user pruduces a word with those requirments. 
+def program_2():
+  printHeader()
+  
+  active = True
+  while active:
+    team_name = input(" Enter a word(Second carracter must be i, o, or u): ")
+    secondLetter = [ "i", "o", "u"]
+
+    if team_name[1].lower() not in secondLetter:
+      print(" The second letter is not i, o, or u")
+      continue
+    else:
+      active = False
+      
+  returnMain()
+
+# Asks user for there name, then prints first and last character. 
+def program_3():
+  printHeader()
+
+  first_name = input(" Enter your frist name: ")
+  length = len(first_name)
+  s = slice(0, length, length-1)
+
+  print(first_name[s])
+
+  returnMain()
+
+# prints "act" and then "tic"
+def program_4():
+  printHeader()
+
+  long_word = "characteristics"
+
+  print("", long_word[ 4:7 ])
+  print("", long_word[ -4:-1:1 ])
+ 
+  returnMain()
+
+# print s "sequence"
+def program_5():
+  printHeader()
+
+
+  long_word="Consequences"
+  print("", long_word[ 3:11 ])
+
+  returnMain()
+
+# prints the first half of a word.
+def program_6():
+  printHeader()
+
+  long_word = "Consequences"
+
+  print("", long_word[ :6 ])
+
+  returnMain()
 ################################################
 
 menuMode = 0
@@ -73,9 +143,9 @@ def autoMenu():
     printHeader()
 
     # change were it says 'baseTemplate' to module name.
-    # import {moduleName} as foo
+    import independentPractice13 as foo
     list = []
-    # {list = getmembers(foo, isfunction)}
+    list = getmembers(foo, isfunction)
 
     i = 0
     x = 0

@@ -42,7 +42,6 @@ while i < (len(header)/2):
 	bottom += r"-"
 	i += 1
 
-bottom += r"\n"
 
 filedata = filedata.replace('{dashThing}', bottom)
 
