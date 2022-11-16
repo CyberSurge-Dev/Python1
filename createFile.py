@@ -1,4 +1,4 @@
-# Zachary Hoove || Create Formated File v1.0
+# Zachary Hoover || Create Formated File v1.0
 # 10-17-22
 
 import shutil

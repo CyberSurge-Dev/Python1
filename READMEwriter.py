@@ -9,9 +9,12 @@ folders = [
 	"Unit 4",
 	"Unit 5",
 	"Unit 6",
-	"Unit 7",
-	"Projects",
-    	"Other",     
+    "Unit 7",
+    "Unit 8",
+    "Projects",
+    "Other",
+    
+        
 ]
 
 lines = []

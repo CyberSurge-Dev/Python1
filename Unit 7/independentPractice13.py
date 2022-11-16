@@ -33,8 +33,8 @@ def program_1():
   printHeader()
 
   street_name = "River Oaks"
-  print(street_name[:5:2])
-  print(street_name[-3:])
+  print("", street_name[:5:2])
+  print("", street_name[-3:])
 
   returnMain()
 
@@ -64,7 +64,7 @@ def program_3():
   length = len(first_name)
   s = slice(0, length, length-1)
 
-  print(first_name[s])
+  print("", first_name[s])
 
   returnMain()
 

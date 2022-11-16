@@ -51,6 +51,13 @@ This repo contains ll of the python files from my python 1 class
  - independentPractice13.py
  - __pycache__
 
+### Unit 8
+ - guidedPractice14.py
+ - guidedPractice15.py
+ - independentPractice14.py
+ - independentPractice15.py
+ - __pycache__
+
 ### Projects
  - pythonProject1.py
 

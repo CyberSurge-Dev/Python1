@@ -1,4 +1,4 @@
-# Zachary hoover || {assignmentName}
+# Zachary Hoover || {assignmentName}
 # {date}
 import os
 from inspect import getmembers, isfunction
@@ -43,31 +43,26 @@ def autoMenu():
   funcName = "autoMenu"
 
   if menuMode == 1:
-    if currentBench > len(usable):
+    if currentBench > len(usable)-1:
       menuMode = 0
       currentBench = -1
       autoMenu()
     else:
       currentBench += 1
-      try:
-        funcName = usable[currentBench][0]
-        usable[currentBench][1]()
-      except:
-        print("Index out of range!")
+      funcName = usable[currentBench][0]
+      usable[currentBench][1]()
       
 
   if menuMode == 2:
-    if currentBench > len(usable):
+    if currentBench > len(usable)-1:
       menuMode = 0
       currentBench = -1
       autoMenu()
     else:
       currentBench += 1
-      try:
-        funcName = usable[currentBench][0]
-        usable[currentBench][1]()
-      except:
-        print("Index out of range!")
+      funcName = usable[currentBench][0]
+      usable[currentBench][1]()
+      
 
   else:
     printHeader()
