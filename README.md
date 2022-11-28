@@ -42,7 +42,7 @@ This repo contains ll of the python files from my python 1 class
  - pizzaTime2.py
  - __pycache__
 
-### Unit 7
+### Unit 7-8
  - codeAnalysisLoops.py
  - codeAnalysisLoops2.py
  - guidedPractice12.py
@@ -51,13 +51,16 @@ This repo contains ll of the python files from my python 1 class
  - independentPractice13.py
  - __pycache__
 
-### Unit 8
+### Unit 9
  - guidedPractice14.py
  - guidedPractice15.py
  - guidedPractice16.py
+ - guidedPractice17.py
+ - GuidedPractice18.py
  - independentPractice14.py
  - independentPractice15.py
  - independentPractice16.py
+ - independentPractice17.py
  - __pycache__
 
 ### Projects
