@@ -1,5 +1,5 @@
-# Zachary Hoover || Guided Practice #15
-# 11-15-22
+# Zachary Hoover || Guided Practice #20
+# 11-30-22
 import os
 from inspect import getmembers, isfunction
 
@@ -13,7 +13,7 @@ funcName = ""
 
 def printHeader():
   clear()
-  print("\n    Guided Practice #15   ")
+  print("\n    Guided Practice #20   ")
   print(" --------------+--------------")
   print(f" Function: {funcName} \n")
   return
@@ -28,112 +28,42 @@ def returnMain():
 ################################################
 # start functions here
 
-# Modifying list
-def modifying_list_intro():
-  motorcycles = ["honda", "yamaha", "suzuki"]
+def moving_from_one_list_to_another():
   printHeader()
 
-  print(" Base list:", motorcycles)
+  # Create lists
+  unconfirmed_users = ["alice", "brian", "candace"]
+  confirmed_users = []
 
-  motorcycles[0] = "ducati"
-  print(" Change at index 0:", motorcycles)
-  
+  # Cycle through unconfirmed users, and add them to the confirmed user list
+  while unconfirmed_users:
+    current_user = unconfirmed_users.pop()
 
+    print(f" Verifying user: {current_user.title()}")
+    confirmed_users.append(current_user)
+
+  # Print the list of confirmed users
+  print("\n The following users have been cofirmed: ")
+  for user in confirmed_users:
+    print("", user)
+          
   returnMain()
 
-# Function for adding items to a list
-def adding_to_list():
+def removing_all_instances_from_a_list():
   printHeader()
 
-  motorcycles = []
+  # Create and print list
+  pets = ["dog", "cat", "dog", "goldfish", "cat", "rabbit", "cat"]
+  print(" Pets:", pets)
 
-  motorcycles.append("honda")
-  motorcycles.append("yamaha")
-  motorcycles.append("suzuki")
+  # Revmove cats from the list
+  while "cat" in pets:
+    pets.remove("cat")
 
-  print(" List:", motorcycles)
-
-  returnMain()
-
-# function using insert on a list
-def inserting_into_list():
-  printHeader()
-  
-  motorcycles = ["honda", "yamaha", "suzuki"]
-  print(" Base list:", motorcycles)
-  
-  motorcycles.insert(1, "ducati")
-  print(" insert(1, \'ducati\'):", motorcycles)
-  
-  returnMain()
-
-# Function to delete items from a list
-def delete_items():
-  printHeader()
-
-  motorcycles = ["honda", "yamaha", "suzuki"]
-  print(" Base list:", motorcycles)
-
-  del motorcycles[0]
-  print(" del index 0:", motorcycles)
-
-  del motorcycles[1]
-  print(" del index 1:", motorcycles)
+  # Print list again
+  print(" Pets 2:", pets)
 
   returnMain()
-
-# function using pop method (remove last item)
-def pop_method():
-  printHeader()
-  
-  motorcycles = ["honda", "yamaha", "suzuki"]
-  print(" Base list:", motorcycles, "\n")
-
-  popped_motorcycle = motorcycles.pop()
-  print(" Popped list:", motorcycles)
-  print(" Popped motorcycle:", popped_motorcycle)
-
-  returnMain()
-
-# Function to print the last motorcycle owned
-def last_owned():
-  printHeader()
-  
-  motorcycles = ["honda", "yamaha", "suzuki"]
-
-  last_owned = motorcycles.pop()
-
-  print(f" The last motorcycle owned was {last_owned.title()}")
-
-  returnMain()
-
-def removing_items():
-  printHeader()
-
-  motorcycles = ["honda", "yamaha", "suzuki", "ducati"]
-  print(" Base list:", motorcycles, "\n")
-  
-  motorcycles.remove("ducati")
-  print(" Remove \'ducati\':", motorcycles)
-  
-  returnMain()
-
-def remove_items_variable():
-  printHeader()
-  
-  motorcycles = ["honda", "yamaha", "suzuki", "ducati"]
-  too_expensive = "ducati"
-
-  print(" Base list:", motorcycles, "\n")
-
-  motorcycles.remove(too_expensive)
-  print(" remove too_expensive:", motorcycles)
-  
-
-  returnMain()
-
-  
-  
 
 ################################################
 
@@ -158,8 +88,8 @@ def autoMenu():
       currentBench += 1
       funcName = usable[currentBench][0]
       usable[currentBench][1]()
-
       
+
   if menuMode == 2:
     if currentBench > len(usable)-1:
       menuMode = 0
@@ -169,13 +99,12 @@ def autoMenu():
       currentBench += 1
       funcName = usable[currentBench][0]
       usable[currentBench][1]()
-        
+      
 
   else:
     printHeader()
 
-    # change were it says 'baseTemplate' to module name.
-    import guidedPractice15 as foo
+    import GuidedPractice20 as foo
     list = []
     list = getmembers(foo, isfunction)
 

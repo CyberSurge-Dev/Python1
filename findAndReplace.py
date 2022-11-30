@@ -9,11 +9,12 @@ folders = [
     "Unit 4",
     "Unit 5",
     "Unit 6",
-    "Unit 7",
+    "Unit 7-8",
+    "Unit 9",
     "Other"
 ]
-find = 'clear = lambda: os.system(\'cls\')'
-replace = r'clear = lambda: os.system("clear" if os.name == "posix" else "cls")'
+find = '# call auto menu function\nautoMenu()'
+replace = r'if __name__ == "__main__": autoMenu();'
 
 for folder in folders:
     for filename in os.listdir(folder):

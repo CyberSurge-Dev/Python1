@@ -113,4 +113,4 @@ def Main():
         Main()
 
 # calls main function
-Main()
+if __name__ == "__main__": Main()

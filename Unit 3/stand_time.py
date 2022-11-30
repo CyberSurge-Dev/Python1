@@ -74,4 +74,4 @@ def Main():
     else:
         Main()
         
-Main()
+if __name__ == "__main__": Main()

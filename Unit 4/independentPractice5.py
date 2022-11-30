@@ -139,5 +139,4 @@ def autoMenu():
 			usable[currentBench-1][1]()
 			
 # auto menu ends
-#program start
-autoMenu()
+if __name__ == "__main__": autoMenu();

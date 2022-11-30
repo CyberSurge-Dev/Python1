@@ -72,5 +72,5 @@ def Main():
         famousQuote()
     else:
         Main()
-Main()
 
+if __name__ == "__main__": Main()

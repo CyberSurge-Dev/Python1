@@ -1,5 +1,5 @@
-# Zachary Hoover || Guided Practice #15
-# 11-15-22
+# Zachary Hoover || Independent Practice: #20
+# 11-30-22
 import os
 from inspect import getmembers, isfunction
 
@@ -13,8 +13,8 @@ funcName = ""
 
 def printHeader():
   clear()
-  print("\n    Guided Practice #15   ")
-  print(" --------------+--------------")
+  print("\n    Independent Practice: #20   ")
+  print(" -----------------+-----------------")
   print(f" Function: {funcName} \n")
   return
 
@@ -28,112 +28,43 @@ def returnMain():
 ################################################
 # start functions here
 
-# Modifying list
-def modifying_list_intro():
-  motorcycles = ["honda", "yamaha", "suzuki"]
+def deli():
   printHeader()
 
-  print(" Base list:", motorcycles)
+  # Create a list of sandwich orders and finished sandwiches
+  sandwich_orders = ["ham and cheese", "italian", "baloney", "BLT", "turkey club"]
+  finished_sandwiches = []
 
-  motorcycles[0] = "ducati"
-  print(" Change at index 0:", motorcycles)
-  
+  # Cycle through sandwich list, print message, add to finished sandwhich
+  while sandwich_orders:
+    current = sandwich_orders.pop()
 
-  returnMain()
+    print(f" I made your {current} sandwich")
+    finished_sandwiches.append(current)
 
-# Function for adding items to a list
-def adding_to_list():
-  printHeader()
-
-  motorcycles = []
-
-  motorcycles.append("honda")
-  motorcycles.append("yamaha")
-  motorcycles.append("suzuki")
-
-  print(" List:", motorcycles)
-
-  returnMain()
-
-# function using insert on a list
-def inserting_into_list():
-  printHeader()
-  
-  motorcycles = ["honda", "yamaha", "suzuki"]
-  print(" Base list:", motorcycles)
-  
-  motorcycles.insert(1, "ducati")
-  print(" insert(1, \'ducati\'):", motorcycles)
+  # print complete finished sandwiches list
+  print("\n Finished Sandwiches:", finished_sandwiches)
   
   returnMain()
 
-# Function to delete items from a list
-def delete_items():
+def no_pastrami():
   printHeader()
 
-  motorcycles = ["honda", "yamaha", "suzuki"]
-  print(" Base list:", motorcycles)
+  # Create a list of sandwich orders and alert customers of the lack of pastrami
+  sandwich_orders = ["ham and cheese", "pastrami", "italian", "pastrami","baloney", "BLT", "turkey club", "pastrami",]
+  print(" The deli has run out of pastrami! \n if your order contains pastrami, it will be removed.")
 
-  del motorcycles[0]
-  print(" del index 0:", motorcycles)
+  i = 0
+  # remove all occurances of "pastrami" in the list
+  while "pastrami" in sandwich_orders:
+    sandwich_orders.remove("pastrami")
+    i += 1
 
-  del motorcycles[1]
-  print(" del index 1:", motorcycles)
-
-  returnMain()
-
-# function using pop method (remove last item)
-def pop_method():
-  printHeader()
-  
-  motorcycles = ["honda", "yamaha", "suzuki"]
-  print(" Base list:", motorcycles, "\n")
-
-  popped_motorcycle = motorcycles.pop()
-  print(" Popped list:", motorcycles)
-  print(" Popped motorcycle:", popped_motorcycle)
-
-  returnMain()
-
-# Function to print the last motorcycle owned
-def last_owned():
-  printHeader()
-  
-  motorcycles = ["honda", "yamaha", "suzuki"]
-
-  last_owned = motorcycles.pop()
-
-  print(f" The last motorcycle owned was {last_owned.title()}")
-
-  returnMain()
-
-def removing_items():
-  printHeader()
-
-  motorcycles = ["honda", "yamaha", "suzuki", "ducati"]
-  print(" Base list:", motorcycles, "\n")
-  
-  motorcycles.remove("ducati")
-  print(" Remove \'ducati\':", motorcycles)
+  # Print the remaining items
+  print("\n Remaining orders:", sandwich_orders)
+  print(f" {i} orders removed.")
   
   returnMain()
-
-def remove_items_variable():
-  printHeader()
-  
-  motorcycles = ["honda", "yamaha", "suzuki", "ducati"]
-  too_expensive = "ducati"
-
-  print(" Base list:", motorcycles, "\n")
-
-  motorcycles.remove(too_expensive)
-  print(" remove too_expensive:", motorcycles)
-  
-
-  returnMain()
-
-  
-  
 
 ################################################
 
@@ -158,8 +89,8 @@ def autoMenu():
       currentBench += 1
       funcName = usable[currentBench][0]
       usable[currentBench][1]()
-
       
+
   if menuMode == 2:
     if currentBench > len(usable)-1:
       menuMode = 0
@@ -169,13 +100,13 @@ def autoMenu():
       currentBench += 1
       funcName = usable[currentBench][0]
       usable[currentBench][1]()
-        
+      
 
   else:
     printHeader()
 
     # change were it says 'baseTemplate' to module name.
-    import guidedPractice15 as foo
+    import IndependentPractice20 as foo
     list = []
     list = getmembers(foo, isfunction)
 

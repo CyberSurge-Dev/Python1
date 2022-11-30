@@ -350,16 +350,19 @@ def main():
 
 
 # loading bar at the begining of the program
-loadingBar = 0
-print("              Loading...             ")
-#      [###################################]
-while loadingBar < 36:
-    # Draws the bar ("end = "\r" is an optinal parameter for the print method. It is used to
-    # add something to the end of a line after it has been run. Here it is used to move the cursor
-    # back to the begining of the line.)
-    print(" [" + "#" * loadingBar + " " * (34 - loadingBar) + "]", end = '\r')
-    # pause time between each segment
-    time.sleep(random.uniform(0.001, 0.2))
-    loadingBar += 1
-isLoading = False
-main()
+
+if __name__ == "__main__": 
+    loadingBar = 0
+    print("              Loading...             ")
+    #      [###################################]
+    while loadingBar < 36:
+        # Draws the bar ("end = "\r" is an optinal parameter for the print method. It is used to
+        # add something to the end of a line after it has been run. Here it is used to move the cursor
+        # back to the begining of the line.)
+        print(" [" + "#" * loadingBar + " " * (34 - loadingBar) + "]", end = '\r')
+        # pause time between each segment
+        time.sleep(random.uniform(0.001, 0.2))
+        loadingBar += 1
+    isLoading = False
+
+    main()

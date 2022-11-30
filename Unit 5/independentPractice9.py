@@ -136,5 +136,4 @@ def autoMenu():
 			autoMenu()
 			
 # auto menu ends
-# program start
-autoMenu()
+if __name__ == "__main__": autoMenu();

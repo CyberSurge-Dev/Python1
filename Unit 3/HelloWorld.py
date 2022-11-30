@@ -13,8 +13,9 @@ def HelloQuote():
     #another way to do this is:
     #print("this is some quotes! \"Hello, World!\"")
 
-Hello()
-HelloQuote()
+if __name__ == "__main__":
+    Hello()
+    HelloQuote()
 
 #1. The errors that python make can be somewhat made out, but it depends on the error type.
 #2. I have not seen any typos that do not cause an error, ecpecially in a language as picky as python

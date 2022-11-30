@@ -16,4 +16,4 @@ def main():
     # calls function again
     main()
     
-main()
+if __name__ == "__main__": main()
