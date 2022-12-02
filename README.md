@@ -6,7 +6,7 @@ This repo contains ll of the python files from my python 1 class
  - Place the files in the same directory.
  - Run createFile, and enter the correct information.
 # Files listed by unit
-### Unit 3
+### Unit_3
  - alarmclock.py
  - BooleansGuided.py
  - GuidedPractice2.py
@@ -15,8 +15,9 @@ This repo contains ll of the python files from my python 1 class
  - Math.py
  - stand_time.py
  - testTime.py
+ - __pycache__
 
-### Unit 4
+### Unit_4
  - guidedPractice5.py
  - guidedPractice6.py
  - IndependentPractice4.py
@@ -25,7 +26,7 @@ This repo contains ll of the python files from my python 1 class
  - pizzaTime.py
  - __pycache__
 
-### Unit 5
+### Unit_5
  - guidedPractice7.py
  - guidedPractice8.py
  - guidedPractice9.py
@@ -34,7 +35,7 @@ This repo contains ll of the python files from my python 1 class
  - independentPractice9.py
  - __pycache__
 
-### Unit 6
+### Unit_6
  - guidedPractice10.py
  - guidedPractice11.py
  - independentPractice10.py
@@ -42,7 +43,7 @@ This repo contains ll of the python files from my python 1 class
  - pizzaTime2.py
  - __pycache__
 
-### Unit 7-8
+### Unit_7_8
  - codeAnalysisLoops.py
  - codeAnalysisLoops2.py
  - guidedPractice12.py
@@ -51,7 +52,7 @@ This repo contains ll of the python files from my python 1 class
  - independentPractice13.py
  - __pycache__
 
-### Unit 9
+### Unit_9
  - guidedPractice14.py
  - guidedPractice15.py
  - guidedPractice16.py
@@ -59,6 +60,7 @@ This repo contains ll of the python files from my python 1 class
  - GuidedPractice18.py
  - GuidedPractice19.py
  - GuidedPractice20.py
+ - GuidedPractice21.py
  - independentPractice14.py
  - independentPractice15.py
  - independentPractice16.py
@@ -66,10 +68,12 @@ This repo contains ll of the python files from my python 1 class
  - IndependentPractice18.py
  - IndependentPractice19.py
  - IndependentPractice20.py
+ - IndependentPractice21.py
  - __pycache__
 
 ### Projects
  - pythonProject1.py
+ - __pycache__
 
 ### Other
  - hello script.py
