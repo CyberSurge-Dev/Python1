@@ -61,6 +61,9 @@ This repo contains ll of the python files from my python 1 class
  - GuidedPractice19.py
  - GuidedPractice20.py
  - GuidedPractice21.py
+ - GuidedPractice22.py
+ - GuidedPractice23.py
+ - GuidedPractice24.py
  - independentPractice14.py
  - independentPractice15.py
  - independentPractice16.py
@@ -69,6 +72,9 @@ This repo contains ll of the python files from my python 1 class
  - IndependentPractice19.py
  - IndependentPractice20.py
  - IndependentPractice21.py
+ - IndependentPractice22.py
+ - IndependentPractice23.py
+ - IndependentPractice24.py
  - __pycache__
 
 ### Projects
