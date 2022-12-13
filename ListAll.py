@@ -1,53 +1,59 @@
+import importlib
 import os
 from inspect import getmembers, isfunction
 
+clear = lambda: os.system('clear' if os.name == 'posix' else 'cls')
 
 folders = [
-	"Unit 3",
-	"Unit 4",
-	"Unit 5",
-	"Unit 6",
-    "Unit 7-8",
-    "Unit 9",
-    "Projects",
-    "Other",
+    "Unit_3",
+    "Unit_4",
+    "Unit_5",
+    "Unit_6",
+    "Unit_7_8",
+    "Unit_9",
+    "Projects"
 ]
 
 funcs = []
 files = []
 
 exceptions = [
-      "autoMenu",
-      "printHeader",
-      "getmembers",
-      "clear",
-      "time",
-      "isfunction",
-      "returnMain",
-      "cls",
-    ]
+    "autoMenu",
+    "printHeader",
+    "getmembers",
+    "clear",
+    "time",
+    "isfunction",
+    "returnMain",
+    "cls",
+    "alarmclock.py",
+    # "Math.py",
+    "GuidedPractice2.py",
+    "main",
+    "Main"
+]
 
 for folder in folders:
     for filename in os.listdir(folder):
-        if filename.count(".py") <= 1: 
-            # files.append(filename)
-            fn = filename[:-3]
-            foo = __import__("baseTemplate")
-            Temp_funcs = getmembers(foo, isfunction)
+        if filename.count(".py") >= 1 and filename not in exceptions:
+            fn = folder + "." + filename
+            print(fn[:-3])
+
+            module = importlib.import_module(fn[:-3])
+
+            Temp_funcs = getmembers(module, isfunction)
+            print(Temp_funcs)
             for func in Temp_funcs:
                 print(func[0])
                 if func[0] not in exceptions:
-                    funcs.append(func)
                     print(func[0])
+                    funcs.append(func)
 
+clear()
 x = 0
-i = 1
 print(" All functions:")
-while i < len(funcs):
-      if funcs[i][0] not in exceptions:
-        x += 1
-        print(f"  {x}. {funcs[i][0]}")
-      i += 1
+while x < len(funcs):
+    x += 1
+    print(f"  {x}. {funcs[x - 1][0]}")
 
-
-
+input("\n Enter key to exit:")
