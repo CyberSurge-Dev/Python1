@@ -6,6 +6,17 @@ This repo contains ll of the python files from my python 1 class
  - Place the files in the same directory.
  - Run createFile, and enter the correct information.
 # Files listed by unit
+### Unit_3
+ - alarmclock.py
+ - BooleansGuided.py
+ - GuidedPractice2.py
+ - HelloWorld.py
+ - independentPractice2.py
+ - Math.py
+ - stand_time.py
+ - testTime.py
+ - __pycache__
+
 ### Unit_4
  - guidedPractice5.py
  - guidedPractice6.py
@@ -56,6 +67,7 @@ This repo contains ll of the python files from my python 1 class
  - GuidedPractice25.py
  - GuidedPractice26.py
  - GuidedPractice27.py
+ - GuidedPractice28.py
  - independentPractice14.py
  - independentPractice15.py
  - independentPractice16.py
@@ -69,6 +81,7 @@ This repo contains ll of the python files from my python 1 class
  - IndependentPractice24.py
  - IndependentPractice26.py
  - IndependentPractice27.py
+ - IndependentPractice28.py
  - __pycache__
 
 ### Projects
@@ -80,4 +93,6 @@ This repo contains ll of the python files from my python 1 class
  - hello2.py
  - image.png
  - OpenCVTest.py
+ - py3.py
+ - variables.py
 
