@@ -62,12 +62,6 @@ This repo contains ll of the python files from my python 1 class
  - GuidedPractice20.py
  - GuidedPractice21.py
  - GuidedPractice22.py
- - GuidedPractice23.py
- - GuidedPractice24.py
- - GuidedPractice25.py
- - GuidedPractice26.py
- - GuidedPractice27.py
- - GuidedPractice28.py
  - independentPractice14.py
  - independentPractice15.py
  - independentPractice16.py
@@ -77,11 +71,24 @@ This repo contains ll of the python files from my python 1 class
  - IndependentPractice20.py
  - IndependentPractice21.py
  - IndependentPractice22.py
+ - __pycache__
+
+### Unit_10
+ - GuidedPractice23.py
+ - GuidedPractice24.py
+ - GuidedPractice25.py
+ - GuidedPractice26.py
+ - GuidedPractice27.py
+ - GuidedPractice28.py
+ - GuidedPractice29.py
+ - GuidedPractice30.py
  - IndependentPractice23.py
  - IndependentPractice24.py
  - IndependentPractice26.py
  - IndependentPractice27.py
  - IndependentPractice28.py
+ - IndependentPractice29.py
+ - IndependentPractice30.py
  - __pycache__
 
 ### Projects
@@ -93,6 +100,4 @@ This repo contains ll of the python files from my python 1 class
  - hello2.py
  - image.png
  - OpenCVTest.py
- - py3.py
- - variables.py
 
