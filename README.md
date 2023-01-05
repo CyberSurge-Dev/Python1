@@ -91,8 +91,19 @@ This repo contains ll of the python files from my python 1 class
  - IndependentPractice30.py
  - __pycache__
 
+### Unit_11
+ - GuidedPractice31.py
+ - GuidedPractice32.py
+ - imported_funcs.py
+ - IndependentPractice31.py
+ - IndependentPractice32.py
+ - pizza.py
+ - printing_functions.py
+ - __pycache__
+
 ### Projects
  - pythonProject1.py
+ - TheFinalPizza.py
  - __pycache__
 
 ### Other
@@ -100,4 +111,6 @@ This repo contains ll of the python files from my python 1 class
  - hello2.py
  - image.png
  - OpenCVTest.py
+ - py3.py
+ - variables.py
 
