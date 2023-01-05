@@ -1,5 +1,5 @@
-# Zachary Hoover || Guided Practice #28
-# 12-14-22
+# Zachary Hoover || Guided Practice #31
+# 01-04-23
 import os
 from inspect import getmembers, isfunction
 
@@ -13,7 +13,7 @@ funcName = ""
 
 def printHeader():
   clear()
-  print("\n    Guided Practice #28   ")
+  print("\n    Guided Practice #32   ")
   print(" --------------+--------------")
   print(f" Function: {funcName} \n")
   return
@@ -28,116 +28,118 @@ def returnMain():
 ################################################
 # start functions here
 
-def x_Y_equal_identical():
+def importing_whole_library():
   printHeader()
 
-  x = 5
-  y = 5
-  print(" x is equal to y?:", x==y)
-  print(" x is identical to y?:", x is y)
+  # Import math module
+  import math
 
-  x = 5
-  y = 6
-  print("\n After variable re-assignment:")
-  print(" x is equal to y?:", x==y)
-  print(" x is identical to y?:", x is y)
+  # compute 2 to the power of 3
+  print("", math.pow(2, 3))
 
-  returnMain()
-def literals():
-  printHeader()
-
-  x = 5.6
-  y = 5.6
-  print(" x is equal to y?:", x==y)
-  print(" x is identical to y?:", x is y)
-
-  x = 5.6
-  y = 10.6
-  print("\n After variable re-assignment:")
-  print(" x is equal to y?:", x==y)
-  print(" x is identical to y?:", x is y)
+  # compute 5 to the power of 2
+  print("", math.pow(5, 2))
 
   returnMain()
 
-def equal_not_identical_lists():
+def importing_and_renaming():
   printHeader()
 
-  x = [4, 9, 8]
-  y = [4, 9, 8]
-  print(" x is equal to y?:", x==y)
-  print(" x is identical to y?:", x is y)
+  import math as ml
 
-  # because they are identical x does not change y
-  x[1] = 5
-  print("\n After variable re-assignment:")
-  print(" x:", x)
-  print(" y:", y)
-  print(" x is equal to y?:", x==y)
-  print(" x is identical to y?:", x is y)
+  # compute 2 to the power of 3
+  print("", ml.pow(2, 3))
+
+  # compute 5 to the power of 2
+  print("", ml.pow(5, 2))
 
   returnMain()
 
-def equal_and_identical_lists():
+def import_only_pow():
   printHeader()
 
-  # variables share same memory location, essentially linked together
-  x = [4, 9, 8]
-  y = x
-  print(" x is equal to y?:", x==y)
-  print(" x is identical to y?:", x is y)
+  # import 'pow' function from math
+  from math import pow
 
-  # because they are linked x changes the value for y aswell
-  x[1] = 5
-  print("\n After variable re-assignment:")
-  print(" x:", x)
-  print(" y:", y)
-  print(" x is equal to y?:", x==y)
-  print(" x is identical to y?:", x is y)
+  # compute 2 to the power of 3
+  print("", pow(2, 3))
+
+  # compute 5 to the power of 2
+  print("", pow(5, 2))
 
   returnMain()
 
-def identity_of_variables_containing_string_literals():
+def import_fabs():
   printHeader()
 
-  # Equal, not identical
-  s1 = "whole milk"
-  s2 = "whole milk"
+  import math
+  x = -5
+  print("", math.fabs(x))
 
-  print("\n s1:", s1)
-  print(" s2:", s2)
-  print(" s1 equals s2?:", s1 == s2)
-  print(" s1 identical to s2?:", s1 is s2)
-  print(" s1 not identical to s2?:", s1 is not s2)
+  y = 12
+  import math as ml
+  print("", ml.fabs(y))
 
-  # Equal, identical
-  s1 = "whole milk"
-  s2 = s1
+  from math import fabs
+  print("", fabs(-5))
 
-  print("\n s1:", s1)
-  print(" s2:", s2)
-  print(" s1 equals s2?:", s1 == s2)
-  print(" s1 identical to s2?:", s1 is s2)
-  print(" s1 not identical to s2?:", s1 is not s2)
+  returnMain()
 
-  # Equal, not identical
-  s1 = "python"
-  s2 = "python"
+def square_root():
+  printHeader()
 
-  print("\n s1:", s1)
-  print(" s2:", s2)
-  print(" s1 equals s2?:", s1 == s2)
-  print(" s1 identical to s2?:", s1 is s2)
-  print(" s1 not identical to s2?:", s1 is not s2)
+  from math import sqrt
 
-  # Equal, not equal, not identical
-  s1 = "python"
-  s2 = "java"
+  # Compute square root of 5
+  print("", sqrt(5))
 
-  print("\n s1:", s1)
-  print(" s2:", s2)
-  print(" s1 equals s2?:", s1 == s2)
-  print(" s1 identical to s2?:", s1 is s2)
-  print(" s1 not identical to s2?:", s1 is not s2)
+  # Compute square root of 30
+  print("", sqrt(30))
+
+  returnMain()
+
+def arithmetic_operators():
+  printHeader()
+
+  print(" --Division--")
+  # Division
+  In = 5/2
+  Out = 2.5
+
+  print("", In)
+  print("", Out)
+
+  print(" --Division--")
+  # Division
+  In = 5//2
+  Out = 2.5
+
+  print("", In)
+  print("", Out)
+
+  print(" --Modulo--")
+  # Modulo
+  In = 5%2
+  Out = 1
+
+  print("", In)
+  print("", Out)
+
+  print(" --Exponents--")
+  # Exponents
+  In = 5**2
+  Out = 8
+
+  print("", In)
+  print("", Out)
+
+  print(" --Exponents--")
+  # Exponents
+  In = 5**2
+  Out = 25
+
+  print("", In)
+  print("", Out)
 
   returnMain()
 
@@ -181,7 +183,7 @@ def autoMenu():
     printHeader()
 
     # change were it says 'baseTemplate' to module name.
-    import GuidedPractice28 as foo
+    import GuidedPractice32 as foo
     list = []
     list = getmembers(foo, isfunction)
 

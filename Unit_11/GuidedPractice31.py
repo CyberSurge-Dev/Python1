@@ -1,5 +1,5 @@
-# Zachary Hoover || Guided Practice #28
-# 12-14-22
+# Zachary Hoover || Guided Practice #31
+# 01-04-23
 import os
 from inspect import getmembers, isfunction
 
@@ -13,7 +13,7 @@ funcName = ""
 
 def printHeader():
   clear()
-  print("\n    Guided Practice #28   ")
+  print("\n    Guided Practice #31   ")
   print(" --------------+--------------")
   print(f" Function: {funcName} \n")
   return
@@ -28,118 +28,61 @@ def returnMain():
 ################################################
 # start functions here
 
-def x_Y_equal_identical():
+def run_make_pizza():
   printHeader()
 
-  x = 5
-  y = 5
-  print(" x is equal to y?:", x==y)
-  print(" x is identical to y?:", x is y)
+  import pizza
 
-  x = 5
-  y = 6
-  print("\n After variable re-assignment:")
-  print(" x is equal to y?:", x==y)
-  print(" x is identical to y?:", x is y)
-
-  returnMain()
-def literals():
-  printHeader()
-
-  x = 5.6
-  y = 5.6
-  print(" x is equal to y?:", x==y)
-  print(" x is identical to y?:", x is y)
-
-  x = 5.6
-  y = 10.6
-  print("\n After variable re-assignment:")
-  print(" x is equal to y?:", x==y)
-  print(" x is identical to y?:", x is y)
+  pizza.make_pizza(18, "pepperoni")
+  pizza.make_pizza(18, "pepperoni", "mushrooms", "green peppers")
 
   returnMain()
 
-def equal_not_identical_lists():
+def run_make_pizza_func_import():
   printHeader()
 
-  x = [4, 9, 8]
-  y = [4, 9, 8]
-  print(" x is equal to y?:", x==y)
-  print(" x is identical to y?:", x is y)
-
-  # because they are identical x does not change y
-  x[1] = 5
-  print("\n After variable re-assignment:")
-  print(" x:", x)
-  print(" y:", y)
-  print(" x is equal to y?:", x==y)
-  print(" x is identical to y?:", x is y)
+  from pizza import make_pizza
+  
+  make_pizza(18, "pepperoni")
+  make_pizza(18, "pepperoni", "mushrooms", "green peppers")
 
   returnMain()
 
-def equal_and_identical_lists():
+def run_make_pizza_from_alias():
   printHeader()
 
-  # variables share same memory location, essentially linked together
-  x = [4, 9, 8]
-  y = x
-  print(" x is equal to y?:", x==y)
-  print(" x is identical to y?:", x is y)
-
-  # because they are linked x changes the value for y aswell
-  x[1] = 5
-  print("\n After variable re-assignment:")
-  print(" x:", x)
-  print(" y:", y)
-  print(" x is equal to y?:", x==y)
-  print(" x is identical to y?:", x is y)
+  from pizza import make_pizza as mp
+  
+  mp(18, "pepperoni")
+  mp(18, "pepperoni", "mushrooms", "green peppers")
 
   returnMain()
 
-def identity_of_variables_containing_string_literals():
+def run_make_pizza_from_module_alias():
   printHeader()
 
-  # Equal, not identical
-  s1 = "whole milk"
-  s2 = "whole milk"
-
-  print("\n s1:", s1)
-  print(" s2:", s2)
-  print(" s1 equals s2?:", s1 == s2)
-  print(" s1 identical to s2?:", s1 is s2)
-  print(" s1 not identical to s2?:", s1 is not s2)
-
-  # Equal, identical
-  s1 = "whole milk"
-  s2 = s1
-
-  print("\n s1:", s1)
-  print(" s2:", s2)
-  print(" s1 equals s2?:", s1 == s2)
-  print(" s1 identical to s2?:", s1 is s2)
-  print(" s1 not identical to s2?:", s1 is not s2)
-
-  # Equal, not identical
-  s1 = "python"
-  s2 = "python"
-
-  print("\n s1:", s1)
-  print(" s2:", s2)
-  print(" s1 equals s2?:", s1 == s2)
-  print(" s1 identical to s2?:", s1 is s2)
-  print(" s1 not identical to s2?:", s1 is not s2)
-
-  # Equal, not equal, not identical
-  s1 = "python"
-  s2 = "java"
-
-  print("\n s1:", s1)
-  print(" s2:", s2)
-  print(" s1 equals s2?:", s1 == s2)
-  print(" s1 identical to s2?:", s1 is s2)
-  print(" s1 not identical to s2?:", s1 is not s2)
+  import pizza as p
+  
+  p.make_pizza(18, "pepperoni")
+  p.make_pizza(18, "pepperoni", "mushrooms", "green peppers")
 
   returnMain()
+
+
+# Has to be outside of a function (on the module level)
+from pizza import *
+
+def run_make_pizza_func_import():
+  printHeader()
+
+  
+  
+  make_pizza(18, "pepperoni")
+  make_pizza(18, "pepperoni", "mushrooms", "green peppers")
+
+  returnMain()
+
+
 
 ################################################
 
@@ -181,7 +124,7 @@ def autoMenu():
     printHeader()
 
     # change were it says 'baseTemplate' to module name.
-    import GuidedPractice28 as foo
+    import GuidedPractice31 as foo
     list = []
     list = getmembers(foo, isfunction)
 
@@ -196,6 +139,7 @@ def autoMenu():
       "isfunction",
       "returnMain",
       "cls",
+      "make_pizza"
     ]
 
     usable = []

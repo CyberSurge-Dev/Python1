@@ -1,5 +1,5 @@
-# Zachary Hoover || Independent Practice #28
-# 12-14-22
+# Zachary Hoover || Independent Practice #32
+# 01-05-23
 import os
 from inspect import getmembers, isfunction
 
@@ -13,7 +13,7 @@ funcName = ""
 
 def printHeader():
   clear()
-  print("\n    Independent Practice #28   ")
+  print("\n    Independent Practice #32   ")
   print(" -----------------+-----------------")
   print(f" Function: {funcName} \n")
   return
@@ -28,65 +28,60 @@ def returnMain():
 ################################################
 # start functions here
 
-def containing_strings():
+def importing_modules():
   printHeader()
 
-  # create 2 variables with equal values
-  e = "Whole Wheat Bread"
-  s = "whole wheat bread".title()
+  # import gcd for greatest commn divisor
+  from math import gcd
+  print(f" The GCD of 16 and 18 is {gcd(16, 18)}")
 
-  # create an IDENTICAL variable by assigning s to i (making them 'linked')
-  i = s
+  # get 2 seperate number from the user using .split()
+  nums = input(" Enter 2 nums with a space between: ").split(" ")
 
-  # print the value of all the variables
-  print(" Values:")
-  print(" e --", e)
-  print(" s --", s)
-  print(" i --", i)
+  # Convert all the nums to int
+  nums = [int(x) for x in nums]
 
-  # Print the comparisons of e and s
-  print("\n e equals s?:", e == s)
-  print(" e identical to s?:", e is s)
-  
-  # Print the comparisons of s and i
-  print("\n s equals i?:", s == i)
-  print(" s identical to i?:", s is i)
+  # print the nums
+  print("\n Your first num is:", nums[0])
+  print(" Your secnd num is:", nums[1])
 
-  # Print the comparisons of e and i
-  print("\n e equals i?:", e == i)
-  print(" e identical to i?:", e is i)
+  # print the GCD of the inputed nums
+  print("\n The GCD of your nums is:", gcd(nums[0], nums[1]))
 
   returnMain()
 
-def containing_lists():
+def math_functions():
   printHeader()
 
-  # create 2 list with equal values
-  e = [[-1, 2], [3, 4], [-5, 6]]
-  x = [[-1, 2], [3, 4], [-5, 6]]
+  x = 5;
 
-  # create an IDENTICAL list by assigning i equal to s (making them 'linked')
-  i = x
-
-  # print the value of all the variables
-  print(" Values:")
-  print(" e --", e)
-  print(" x --", x)
-  print(" i --", i)
-
-  # Print the comparisons of e and x
-  print("\n e equals x?:", e == x)
-  print(" e identical to x?:", e is x)
-  
-  # Print the comparisons of s and i
-  print("\n i equals x?:", i == x)
-  print(" i identical to x?:", i is x)
-
-  # Print the comparisons of e and i
-  print("\n e equals i?:", e == i)
-  print(" e identical to i?:", e is i)
+  # checks if x is even or odd, print result
+  if ( (x % 2) == 0 ):
+    print(f" {x} is even.")
+  else:
+    print(f" {x} is odd.")
 
   returnMain()
+
+def even_numbers():
+  printHeader()
+
+  # import sqrt
+  from math import sqrt
+
+  # create list of nums
+  L = [25, 34, 193, 2, 81, 26, 44]
+
+  # cycle through all items
+  for num in L:
+    # Check if the item is even
+    if ( (num % 2) == 0 ):
+      # print the sqrt of the current item
+      print(f" The sqrt of {num} is {sqrt(num)}")
+
+
+  returnMain()
+
 
 ################################################
 
@@ -128,7 +123,7 @@ def autoMenu():
     printHeader()
 
     # change were it says 'baseTemplate' to module name.
-    import IndependentPractice28 as foo
+    import IndependentPractice32 as foo
     list = []
     list = getmembers(foo, isfunction)
 
