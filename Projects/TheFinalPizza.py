@@ -8,9 +8,26 @@ import threading
 # for sleep function (also for timer)
 from time import sleep
 import math
+from random import choice
 
 # Set the value of clear to be used throughout the program to clear the screen (cant belive this isnt default)
 clear = lambda: os.system('clear' if os.name == 'posix' else 'cls')
+terminal_size = size = os.get_terminal_size()
+
+# Checks if colorama is installed (program will not run without)
+try:
+    from colorama import init
+    init()
+    has_colorama = True
+except Exception as e:
+    print(f" Exception (for debug purposes): {e}")
+    has_colorama = False
+
+
+def move_to(y, x):
+    """Moves cursor to specific spot in the terminal (another function thats standard in other languages.)"""
+    # print("\033[{%d};{%d}H".format(y, x))
+    print("\033[%d;%dH" % (y, x), end="")
 
 
 # calss of color codes used in the program
@@ -49,55 +66,228 @@ Threading code (for timer)
 time = threading.Thread(target=timer, args=(20, ))
 time.start()
 """
-# Create global variables
+
+# Create global variables for keeping track of level progression
 current_level = 1
 time_remaining = 0
 
 
 def print_header():
-    print(Colors.BLUE + """
+    """Prints the game's ACSII title"""
+
+    print(Colors.LIGHT_BLUE + """
  ████████ ██   ██ ███████     ███████ ██ ███    ██  █████  ██
     ██    ██   ██ ██          ██      ██ ████   ██ ██   ██ ██
     ██    ███████ █████       █████   ██ ██ ██  ██ ███████ ██
     ██    ██   ██ ██          ██      ██ ██  ██ ██ ██   ██ ██
-    ██    ██   ██ ███████     ██      ██ ██   ████ ██   ██ ███████""" +
-          Colors.END)
-    print(
-        Colors.LIGHT_RED +
-        """
+    ██    ██   ██ ███████     ██      ██ ██   ████ ██   ██ ███████
+          """ + Colors.END)
+
+    print(Colors.LIGHT_RED + """
  ██████╗ ██╗███████╗███████╗ █████╗     // ""--.._
  ██╔══██╗██║╚══███╔╝╚══███╔╝██╔══██╗    ||  (_)  _ "-._
  ██████╔╝██║  ███╔╝   ███╔╝ ███████║    ||    _ (_)    '-.
  ██╔═══╝ ██║ ███╔╝   ███╔╝  ██╔══██║    ||   (_)   __..-'
  ██║     ██║███████╗███████╗██║  ██║    \\__..--""
- ╚═╝     ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝
-        """ + Colors.END)
+ ╚═╝     ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝""" + Colors.END)
+
+    return
+
+def print_pizza():
+    """Prints ACSII Pizza (for game screen), this has undergone several variations"""
+    print(Colors.YELLOW + f"""
+          :~!7?JJJJ??7!^:
+      .^7      ?7?       J?~.
+    .7?J      ~~!~~         J!.
+   ^J         !~~~!          J !
+  ~J                   !~~~~  ? ?
+ 77  7!!!   J77?       ~~~~~     7
+:JJ !~~~~~ ?^~~~^               7 :
+7?   J?7J   ?7!7                7 7
+7 ?              ?77J     !~~~! ? 7
+: ?             ^~!~^J    ~~~~~ ? :
+ 7?    ?!!!7    J7!!?       J  ? ?
+  ?    ^~!~^?        ?77       ?J
+   !    ???         ^~!~^J    ?~
+    .7J             J7!!?   ?!.
+      .^?               J?7^.
+          :~7??JJJJJ?7~^:
+    """)
+    return
+
+def count_down(toppings, game_time):
+    """Looks similar to game screen, but has ACSII 3,2,1 for the start of a level"""
+    clear()
+
+    print(Colors.LIGHT_RED + """
+          ^7777~
+         :?JJJJ!
+    .:^~7?J???J!
+    ~JJJJJ????J!
+    ~?????????J!
+     ....!J???J!
+         ~J???J!
+         ~J???J!
+         ~J???J!
+         ~J???J!
+         ~JJJJJ!
+         :~~~~~
+    """ + Colors.END)
+
+    # move cursor and print the gui elements
+    print()
+    move_to(3, 30)
+    print(Colors.LIGHT_BLUE + Colors.BOLD + "Seconds Remaining:" + Colors.END)
+    move_to(4, 30)
+    print(Colors.WHITE + str(game_time).center(len("Seconds Remaining:")) + Colors.END)
+
+    move_to(6, 30)
+    print(Colors.LIGHT_BLUE + "Ingredients:" + Colors.END)
+    x = 7
+    for topping in toppings:
+        move_to(x, 31)
+        print(Colors.RED + "X " + topping)
+        x += 1
+    sleep(1)
+
+    clear()
+
+    print(Colors.YELLOW + """
+       .:~!!77!~^:
+     .~?JJJJJJJJJ?7^
+    .7JJ??J???JJ??JJ!
+    !J??J?~. .^?J???J:
+    ?JJJJ7     ?J??J?.
+    :::::.  .^?J?JJ?^
+          :!?JJJJ?!:
+       .~?JJJJ?7~.
+     :!?JJ???!^......
+    ~JJ??????????????:
+   .?JJJJJJJJJJJJJJJJ:
+   .77777777777777777.
+    """ + Colors.END)
+
+    # move cursor and print the gui elements
+    print()
+    move_to(3, 30)
+    print(Colors.LIGHT_BLUE + Colors.BOLD + "Seconds Remaining:" + Colors.END)
+    move_to(4, 30)
+    print(Colors.WHITE + str(game_time).center(len("Seconds Remaining:")) + Colors.END)
+
+    move_to(6, 30)
+    print(Colors.LIGHT_BLUE + "Ingredients:" + Colors.END)
+    x = 7
+    for topping in toppings:
+        move_to(x, 31)
+        print(Colors.RED + "X " + topping)
+        x += 1
+    sleep(1)
+
+    clear()
+
+    print(Colors.GREEN + """
+       :^~!!77!~^.
+    ^7Y55PPPPPPP5Y?^
+    ~YPP5YJJ?JY5P5PP7
+      ~!:      .?P55P~
+                7P55P~
+          ~???JY5555?.
+          ?PPPPP555?:
+          ^!!7?Y55555!
+                !P5555:
+    .!J~:.     .?P55P5.
+    !5PPP5YYJJJY5P5PPY^
+    .^7Y55PPPPPPP5Y?~.
+        .^~!!!!!~:.
+          """ + Colors.END)
+
+    # move cursor and print the gui elements
+    print()
+    move_to(3, 30)
+    print(Colors.LIGHT_BLUE + Colors.BOLD + "Seconds Remaining:" + Colors.END)
+    move_to(4, 30)
+    print(Colors.WHITE + str(game_time).center(len("Seconds Remaining:")) + Colors.END)
+
+    move_to(6, 30)
+    print(Colors.LIGHT_BLUE + "Ingredients:" + Colors.END)
+    x = 7
+    for topping in toppings:
+        move_to(x, 31)
+        print(Colors.RED + "X " + topping)
+        x += 1
+
+
+
+def get_toppings(count):
+    """Returns an array of random toppings based on the amount given"""
+
+    # available toppings
+    toppings = [
+        "pepperoni", "mushroom", "cheese", "onion", "black olives", "green pepper",
+        "garlic", "tomato", "basil", "pineapple", "salmon", "tuna", "ham",
+        "turkey", "mango", "beetroot", "crab", "chocolate", "peas",
+        "caramelised onion", "apple", "apple", "goat cheese"
+    ]
+
+    # return list
+    return_toppings = []
+
+    # cycle through until a complete list of the requested length is created.
+    while count > 0:
+        current = choice(toppings)
+        if (current not in return_toppings):
+            return_toppings.append(current)
+            count -= 1
+        else:
+            # else block for readability
+            continue
+
+    return return_toppings
 
 
 def timer(time):
+    """
+    Counts down the amount of seconds from variable 'time'.
+    (This function is meant to run async to the play_level() function)
+    """
+    # assign the global variable time_remaining
     global time_remaining
     time_remaining = time
+
+    # Count down every second and subtract from remaining time
     while (time_remaining > 0):
         sleep(1)
         time_remaining -= 1
 
 
-def play_level():
-    pass
+def play_level(topping_count, total_time):
+    """Creates a level for the play bassed on the parameters passed in by the level generator."""
+    global time_remaining
+    clear()
+
+    # Get toppings for game
+    toppings = get_toppings(topping_count)
+
+    count_down(toppings, total_time)
+
+    game_running = True
+
+    input()
 
 
 def generate_level():
+    """Generates a level based on the current level."""
     global current_level
 
     # Get topping count based on current level (uses seemingly random progression curve)
-    while True:
-        topping_count = math.floor(1.1 * (math.log(current_level + 1.1813) + 2))
-        print(f" Level {current_level}: {topping_count}")
-        current_level += 1
-        sleep(0.3)
+    topping_count = math.floor(1.1 * (math.log(current_level + 1.1813) + 2) + 1)
+    total_time = math.floor(-4 * (math.log(current_level + 25) - 7.5))
+
+    play_level(topping_count, total_time)
 
 
 def credits():
+    """Display the games credits"""
     # Clear screen and print the header again
     clear()
     print_header()
@@ -117,7 +307,7 @@ def credits():
     print(" Github: " + f"\u001b]8;;{target}\u001b\\{text}\u001b]8;;\u001b\\")
 
     # Wait for user input, then return to main()
-    input("\n\n Press enter to return...")
+    input(Colors.LIGHT_BLUE + "\n\n Press enter to return..." + Colors.END)
 
     print(Colors.END)
     main()
@@ -135,12 +325,12 @@ def how_to_play():
 
  In tis game it is your objective to make pizzas as fast as possible.
  You must type out each of the ingredients that the customer wants before time is up.
- If you run out of time, your pizza restraunt gets shut down and the game is over.
+ If you run out of time, your pizza restaurant gets shut down and the game is over.
 
  You only get 3 attempts to spell the ingredients correctly, So good luck and have fun!
     """)
 
-    input("\n\n Press enter to return...")
+    input(Colors.LIGHT_BLUE + "\n Press enter to return..." + Colors.END)
 
     print(Colors.END)
     main()
@@ -148,19 +338,33 @@ def how_to_play():
 
 def main():
     # Clear the screen and print the header
+    if (has_colorama == False):
+        print(" You are missing a module required to run this program (colorama)")
+        i = input(Colors.LIGHT_BLUE + " would you like to install it? (y/n): ")
+        if (i.lower() == "y"):
+            # run pip command
+            os.system("pip install colorama")
+            input(Colors.LIGHT_BLUE + "\n Press enter to restart program..." + Colors.END)
+
+            # restart program
+            dir = os.getcwd()
+            os.system(f"python {dir}")
+
     clear()
     print_header()
 
     # print the users options
     print(Colors.WHITE)
-    print(" (1). Start Game")
-    print(" (2). How to Play")
-    print(" (3). Credits")
-    print(" (4). Exit Game")
-
+    print(("{:^" + str(terminal_size.columns) + "}").format("""
+   (1). Start Game
+   (2). How to Play
+   (3). Credits
+   (4). Exit Game
+  """))
 
     # get user input and use if-elif-else to navigate program
-    selected = input(Colors.BOLD + Colors.WHITE + "\n Input number of the item: " + Colors.LIGHT_BLUE)
+    selected = input(Colors.BOLD + Colors.LIGHT_BLUE +
+                     "\n Input number of the item: " + Colors.LIGHT_BLUE)
     if (selected == "1"):
         generate_level()
     elif (selected == "2"): \
@@ -173,6 +377,7 @@ def main():
         main()
 
 
+print(Colors.END)
 # if the file is not imported as a module, run the main() function
 if __name__ == "__main__":
     # program start
