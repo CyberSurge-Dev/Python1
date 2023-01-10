@@ -94,9 +94,13 @@ This repo contains ll of the python files from my python 1 class
 ### Unit_11
  - GuidedPractice31.py
  - GuidedPractice32.py
+ - GuidedPractice33.py
+ - GuidedPractice34.py
+ - GuidedPractice35.py
  - imported_funcs.py
  - IndependentPractice31.py
  - IndependentPractice32.py
+ - IndependentPractice33.py
  - pizza.py
  - printing_functions.py
  - __pycache__
