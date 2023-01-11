@@ -1,5 +1,4 @@
-# dupixl -- custom library just to make curses a little easier to use
-
+# dupixl -- custom mini library just to make curses a little easier to use
 import curses
 
 
@@ -33,4 +32,11 @@ def add_right_align(screen, message, row=0, padding=0, color=curses.COLOR_WHITE)
     """Right aligns the given string on given row with given padding on given screen (theres a trend here)"""
     num_rows, num_cols = screen.getmaxyx()
     screen.addstr(row, (num_cols - padding) - len(message), message, color)
+    return
+
+def clear_windows(windows):
+    """Refreshes all screens passed in parameters"""
+    for window in windows:
+        window.clear()
+        window.refresh()
     return
