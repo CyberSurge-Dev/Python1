@@ -1,3 +1,5 @@
+# <header style="color:red; font-weight: 700; font-size: 36px;">This repository is no longer being updated</header>
+
 # Python 1
 Python 1 Academy Honors repo
 This repo contains ll of the python files from my python 1 class
@@ -101,11 +103,19 @@ This repo contains ll of the python files from my python 1 class
  - IndependentPractice31.py
  - IndependentPractice32.py
  - IndependentPractice33.py
+ - IndependentPractice34.py
  - pizza.py
  - printing_functions.py
  - __pycache__
 
 ### Projects
+ - FinalProject
+    - modules
+        - dopixl.py
+        - game_funcs.py
+        - game_utils.py
+        - inits.py
+    - TheFinalPizza.py
  - pythonProject1.py
  - TheFinalPizza.py
  - __pycache__

@@ -1,14 +1,13 @@
 import importlib
 import os
 from inspect import getmembers, isfunction
-
 clear = lambda: os.system('clear' if os.name == 'posix' else 'cls')
 
 folders = [
     "Unit_3",
-    "Unit_4",
-    "Unit_5",
-    "Unit_6",
+	"Unit_4",
+	"Unit_5",
+	"Unit_6",
     "Unit_7_8",
     "Unit_9",
     "Unit_10",
@@ -19,25 +18,25 @@ funcs = []
 files = []
 
 exceptions = [
-    "autoMenu",
-    "printHeader",
-    "getmembers",
-    "clear",
-    "time",
-    "isfunction",
-    "returnMain",
-    "cls",
-    "alarmclock.py",
-    # "Math.py",
-    "GuidedPractice2.py",
-    "main",
-    "Main"
-]
+      "autoMenu",
+      "printHeader",
+      "getmembers",
+      "clear",
+      "time",
+      "isfunction",
+      "returnMain",
+      "cls",
+      "alarmclock.py",
+      #"Math.py",
+      "GuidedPractice2.py",
+      "main",
+      "Main"
+    ]
 
 for folder in folders:
     print(f"\n\n\n -----+ Checking {folder} +----- \n\n\n")
     for filename in os.listdir(folder):
-        if filename.count(".py") >= 1 and filename not in exceptions:
+        if filename.count(".py") >= 1 and filename not in exceptions: 
             fn = folder + "." + filename
             print("Checking file" + fn[:-3] + "...")
 
@@ -52,12 +51,20 @@ for folder in folders:
                     funcs.append(func)
                 else:
                     print("skipped", func[0])
+                
+                
+                    
 
-clear()
+clear()                
 x = 0
 print(" All functions:")
 while x < len(funcs):
     x += 1
-    print(f"  {x}. {funcs[x - 1][0]}")
+    print(f"  {x}. {funcs[x-1][0]}")
 
 input("\n Enter key to exit:")
+    
+
+
+
+

@@ -1,6 +1,16 @@
-# dupixl -- custom mini library just to make curses a little easier to use
+# Created By: Zachary Hoover
+# Created Date: 1/9/2022
+# Version: 1.21
+# --------------------------------------------------------------------------------
+"""
+This program is acollection of simple functions
+that allow for easier use of the curses python module.
+Many of the functions hee are just simplifications of
+other functions already in curses.
+"""
+# --------------------------------------------------------------------------------
 import curses
-
+# --------------------------------------------------------------------------------
 
 def add_center(screen, message, row=-1, color=curses.COLOR_WHITE):
     """Adds the given string at the center of the screen"""
@@ -33,6 +43,7 @@ def add_right_align(screen, message, row=0, padding=0, color=curses.COLOR_WHITE)
     num_rows, num_cols = screen.getmaxyx()
     screen.addstr(row, (num_cols - padding) - len(message), message, color)
     return
+
 
 def clear_windows(windows):
     """Refreshes all screens passed in parameters"""

@@ -2,17 +2,17 @@
 # 10-18-22
 
 import os
-
 files = r"README.md"
 
 folders = [
     "Unit_3",
-    "Unit_4",
-    "Unit_5",
-    "Unit_6",
+	"Unit_4",
+	"Unit_5",
+	"Unit_6",
     "Unit_7_8",
     "Unit_9",
     "Unit_10",
+    "Unit_11",
     "Projects",
     "Other",
 ]
@@ -28,6 +28,7 @@ lines.append(" - Run createFile, and enter the correct information.\n")
 
 lines.append("# Files listed by unit\n")
 
+
 for x in folders:
     lines.append("### " + x + "\n")
     # print("1")
@@ -37,7 +38,7 @@ for x in folders:
     lines.append("\n")
 
 with open(files, "w") as file:
-    file.writelines(lines)
-    file.close()
+   file.writelines(lines)
+   file.close()
 
 print("done")
